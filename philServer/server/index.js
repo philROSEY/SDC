@@ -39,6 +39,6 @@ app.put('/reviews/:review_id/report', (req, res) => {
 
 
 
-app.listen(80, () => {
-    console.log('server is listening on port 80!')
+app.listen(8000, () => {
+    console.log('server is listening on port 8000!')
 })
