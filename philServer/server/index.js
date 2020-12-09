@@ -10,6 +10,10 @@ var app = express()
 app.use(bodyParser.json())
 app.use(morgan('dev'))
 
+app.get('/loaderio-b4b358ecf8c9938d1353dac4404039a3/', (req, res) => {
+    res.status(200).send('loaderio-b4b358ecf8c9938d1353dac4404039a3')
+})
+
 app.get('/reviews/meta', (req, res) => {
     // req.query.product_id = random.random
     control.getMeta(req, res)
