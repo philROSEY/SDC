@@ -1,6 +1,7 @@
 const mysql = require('mysql');
 
-const conn = mysql.createConnection({
+const conn = mysql.createPool({
+    connectionLimit: 10,
     host: '3.17.141.94',
     user: 'root',
     password: 'password',
@@ -8,7 +9,7 @@ const conn = mysql.createConnection({
     database: 'SDC'
 })
 
-conn.connect((err) => {
+conn.getConnection((err) => {
     if (err) {
         console.log('ERROR CONECTING TO DB:', err.message)
     } else {
